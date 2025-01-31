@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'), local('Inter-Regular'),
+        url('./Fonts/Inter_24pt-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9F9F9;
+    height: 200vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.header__container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1290px;
+    margin: 0 auto;
+}
