@@ -1,0 +1,180 @@
+.category {
+    margin-top: 30px;
+}
+
+.category__box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.category__box__in {
+    border: 1px solid #F0F0F0;
+    border-radius: 12px;
+    width: 135px;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category__box__in:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category__box__title {
+    color: #E23535;
+}
+
+.category__box__img {
+    width: 32px;
+    height: 32px
+}
+
+.category__box__mobile {
+    display: none;
+}
+
+@media (max-width: 710px) {
+    .mySwiper {
+        width: 100%;
+    }
+
+    .category {
+        margin-top: 20px;
+    }
+
+    .category__box__in {
+        display: none;
+    }
+
+    .category__box__mobile {
+        display: flex;
+    }
+    
+    .category__box__in__mobile1,
+    .category__box__in__mobile2,
+    .category__box__in__mobile3,
+    .category__box__in__mobile4,
+    .category__box__in__mobile5,
+    .category__box__in__mobile6,
+    .category__box__in__mobile7,
+    .category__box__in__mobile8 {
+        border: 1px solid #F0F0F0;
+        border-radius: 6px;
+        max-width: 99px;
+        height: 40px;  
+        display: flex;    
+        justify-content: center;
+        align-items: center;  
+        column-gap: 8px;
+    }
+
+    .category__box__img__mobile1,
+    .category__box__img__mobile2,
+    .category__box__img__mobile3,
+    .category__box__img__mobile4,
+    .category__box__img__mobile5,
+    .category__box__img__mobile6,
+    .category__box__img__mobile7,
+    .category__box__img__mobile8 {
+        width: 24px;
+        height: 24px;
+    }
+
+    .category__box__title__mobile1,
+    .category__box__title__mobile2,
+    .category__box__title__mobile3,
+    .category__box__title__mobile4,
+    .category__box__title__mobile5,
+    .category__box__title__mobile6,
+    .category__box__title__mobile7,
+    .category__box__title__mobile8 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 129%;
+        color: #E23535;
+    }
+
+    .mySwiper .swiper-pagination {
+        display: none;
+    }
+    
+      
+}
+
+@media (max-width: 390px) {
+    .category__box__in__mobile1,
+    .category__box__in__mobile2,
+    .category__box__in__mobile3,
+    .category__box__in__mobile4,
+    .category__box__in__mobile5,
+    .category__box__in__mobile6,
+    .category__box__in__mobile7,
+    .category__box__in__mobile8 {
+        border: 1px solid #F0F0F0;
+        border-radius: 6px;
+        width: 80px;
+        height: 30px;  
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        column-gap: 6px;
+    }
+
+    .category__box__title__mobile1,
+    .category__box__title__mobile2,
+    .category__box__title__mobile3,
+    .category__box__title__mobile4,
+    .category__box__title__mobile5,
+    .category__box__title__mobile6,
+    .category__box__title__mobile7,
+    .category__box__title__mobile8 {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 129%;
+        color: #E23535;
+    }
+}
+
+@media (max-width: 320px) {
+    .category__box__in__mobile1,
+    .category__box__in__mobile2,
+    .category__box__in__mobile3,
+    .category__box__in__mobile4,
+    .category__box__in__mobile5,
+    .category__box__in__mobile6,
+    .category__box__in__mobile7,
+    .category__box__in__mobile8 {
+        border: 1px solid #F0F0F0;
+        border-radius: 6px;
+        width: 70px;
+        height: 30px;  
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        column-gap: 4px;
+    }
+
+    .category__box__title__mobile1,
+    .category__box__title__mobile2,
+    .category__box__title__mobile3,
+    .category__box__title__mobile4,
+    .category__box__title__mobile5,
+    .category__box__title__mobile6,
+    .category__box__title__mobile7,
+    .category__box__title__mobile8 {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 129%;
+        color: #E23535;
+    }
+}
