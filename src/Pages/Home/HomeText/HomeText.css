@@ -1,0 +1,72 @@
+.homeText {
+    margin-top: 60px;
+}
+
+.homeText__box {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.homeText__name1 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 125%;
+    padding-bottom: 16px;
+}
+
+.homeText__name2 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 137%;
+    padding-bottom: 10px;
+}
+
+.homeText__text1 {
+    padding-bottom: 16px;
+}
+
+.homeText__text1,
+.homeText__text2 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;    
+}
+
+.homeText__open {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: #FF7010;
+    cursor: pointer;
+    padding-top: 16px;
+}
+
+.homeText__content {
+    max-height:250px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+.homeText__content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #F9F9F9 100%);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.expanded {
+    max-height: 700px;
+    opacity: 1;
+}
+
+.expanded::after {
+    opacity: 0;
+}
+
+

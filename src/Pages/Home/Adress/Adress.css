@@ -1,0 +1,78 @@
+.adress {
+    margin-top: 30px;
+}
+
+.adress__box {
+    max-width: 1290px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: 1px solid #E5E5E5;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 80px; */
+}
+
+.adress__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;    
+}
+
+.adress__form {
+    width: 953px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adress__input {
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    width: 783px;
+    height: 48px;   
+    outline: none; 
+    padding-left: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    color: #A5A5A5;
+    position: relative;
+}
+
+.adress__input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    color: #A5A5A5;
+}
+
+/* надо сделать иконку локация */
+.adress__input::after {
+    content: '';
+    position: absolute;
+    background-image: url(./AdressIMG/AdessLocation.svg);
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    z-index: 2000; 
+}
+
+.adress__btn {
+    border-radius: 6px;
+    width: 150px;
+    height: 48px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    background-color: #FF7010;   
+    border: none;
+    color: white; 
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.adress__btn:hover {
+    background-color: #fe8e43;
+}

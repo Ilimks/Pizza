@@ -9,7 +9,6 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: #F9F9F9;
-    height: 200vh;
 }
 
 * {
@@ -23,6 +22,7 @@ body {
     max-width: 1290px;
     margin: 0 auto;
 }
+
 
 @media (max-width: 1330px) {
     .container {

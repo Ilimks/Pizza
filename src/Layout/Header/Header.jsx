@@ -3,15 +3,22 @@ import { motion } from 'framer-motion';
 import throttle from "lodash/throttle";
 import './Header.css'
 import headerLocation from './HeaderIMG/HeaderLocation.svg'
-import headerArrowDown from './HeaderIMG/HeaderArrowDown.svg'
 import headerIconAccount from './HeaderIMG/HeaderIconAccount.svg'
 import headerPizza from './HeaderIMG/HeaderPizza.svg'
-import headerShopBag from './HeaderIMG/HeaderShopBag.svg'
 
 
 const Header = () => {
 
     const [scrolled, setScrolled] = useState(false);
+    const [other, setOther] = useState(false)
+    const [city, setCity] = useState(false)
+    const [cityName, setCityName] = useState("Москва");
+
+    const handleCitySelect = (selectedCity) => {
+        setCityName(selectedCity);
+        setCity(false);
+    };
+
 
     useEffect(()=>{
         const headScroll = throttle(() => {
@@ -33,7 +40,22 @@ const Header = () => {
                         <div className="header__top__left">
                             <div className="header__top__left__city">
                                 <img className='header__top__left__city__img' src={headerLocation} alt="city" />
-                                <p className='header__top__left__city__text'>Москва</p>
+                                <p onClick={() => setCity(!city)} className={`header__top__left__city__text city ${city ? "open" : ""}`}>{cityName}</p>
+                                {city && (
+                                    <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="city__box"
+                                    >
+                                        <ul className='city__list'>
+                                            {["Москва", "Томск", "Казань"].map((cityName) => (
+                                                <li key={cityName} className="city__list__li" onClick={() => handleCitySelect(cityName)}>{cityName}</li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                )}
                             </div>
                             <p className='header__top__left__adress'>Проверить адрес</p>
                             <p className='header__top__left__time'>Среднее время доставки*: <span>00:00:00</span></p>
@@ -92,7 +114,27 @@ const Header = () => {
                                     <li className='h__nav__menu__item'>Комбо</li>
                                     <li className='h__nav__menu__item'>Десерты</li>
                                     <li className='h__nav__menu__item'>Соусы</li>
-                                    <li className='h__nav__menu__item'>Другое</li>
+                                    <li onClick={() => setOther(!other)} className={`h__nav__menu__item other ${other ? "open" : ""}`}>Другое</li>
+                                    {other && (
+                                        <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="other__box"
+                                        >
+                                        <ul className='other__list'>
+                                            <li className='other__list__li'>Акции</li>
+                                            <li className='other__list__li'>О компании</li>
+                                            <li className='other__list__li'>Пользовательское соглашение</li>
+                                            <li className='other__list__li'>Условия гарантии</li>
+                                            <li className='other__list__li'>Ресторан</li>
+                                            <li className='other__list__li'>Контакты</li>
+                                            <li className='other__list__li'>Поддержка</li>
+                                            <li className='other__list__li'>Отследить заказ</li>
+                                        </ul>
+                                        </motion.div>
+                                    )}
                                 </ul>
                             </nav>
                         </div>

@@ -14,12 +14,11 @@ import MainSauce from '../CategoryIMG/MainSauce.svg'
 
 const CategorySwiperMobile = () => {
 
-    
-
     return (
         <>
             <Swiper
-              slidesPerView={3.5}
+              slidesPerView="auto"
+              spaceBetween={12}
               centeredSlides={false}
               grabCursor={true}
               pagination={{ clickable: true }}
