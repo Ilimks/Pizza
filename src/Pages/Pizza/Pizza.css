@@ -1,0 +1,65 @@
+.pizza__top {
+  color: #000;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "SF Pro Text", sans-serif;
+  padding: 32px 0;
+}
+.pizza__cards{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 27px;
+    row-gap: 30px;
+}
+.pizza__card {
+  background: #ffffff;
+  border: 1px solid #C4C4C4;
+  max-width: 302px;
+  height: 482px;
+  border-radius: 12px;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ justify-content: center;
+}
+.pizza__title {
+  padding: 16px 0 12px 20px;
+  color: #191919;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "SF Pro Text", sans-serif;
+  line-height: 122%;
+}
+.pizza__info {
+  padding: 0 0 16px 20px;
+  color: #191919;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "SF Pro Text", sans-serif;
+  line-height: 122%;
+}
+.pizza__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 51px;
+}
+.pizza__btn {
+  width: 141px;
+  height: 48px;
+  background: #ff7010;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "SF Pro Text", sans-serif;
+  line-height: 125%;
+  border-radius: 6px;
+  border: none;
+}
+.pizza__price {
+  color: #ff7010;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "SF Pro Text", sans-serif;
+  line-height: 100%;
+}
