@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import throttle from "lodash/throttle";
 import './Header.css'
 import headerLocation from './HeaderIMG/HeaderLocation.svg'
 import headerIconAccount from './HeaderIMG/HeaderIconAccount.svg'
 import headerPizza from './HeaderIMG/HeaderPizza.svg'
+import CrossPopup from './HeaderIMG/CrossPopup.svg'
+import PizzaBasket from './HeaderIMG/PizzaBasket.svg'
+import Minus from './HeaderIMG/minus.svg'
+import Plus from './HeaderIMG/Plus.svg'
 
 
 const Header = () => {
@@ -13,6 +17,15 @@ const Header = () => {
     const [other, setOther] = useState(false)
     const [city, setCity] = useState(false)
     const [cityName, setCityName] = useState("Москва");
+    const [OpenBasket, setOpenBasket] = useState(false);
+
+    useEffect(() => {
+        if (OpenBasket) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+    }, [OpenBasket]);
 
     const handleCitySelect = (selectedCity) => {
         setCityName(selectedCity);
@@ -77,7 +90,63 @@ const Header = () => {
                             <img className='header__bottom__pizza__img' src={headerPizza} alt="pizza" />
                             <p className='header__bottom__pizza__text'>Куда пицца</p>
                         </div>
-                        <button className='header__bottom__btn'>0 ₽</button>
+                        <button onClick={() => setOpenBasket(true)} className='header__bottom__btn'>0 ₽</button>
+                        <AnimatePresence>
+                        {OpenBasket && (
+                            <>
+                                <motion.div
+                                className="header__bottom__btn__open"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => setOpenBasket(false)}
+                                />
+
+                                <motion.div
+                                className="header__bottom__btn__popup"
+                                initial={{ x: "100%" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "100%" }}
+                                transition={{ type: "spring", stiffness: 120, damping: 20 }}
+                                >
+                                
+                                <div className="header__bottom__btn__content">
+                                    <div className="header__bottom__btn__up">
+                                        <h3 className='header__bottom__btn__name'>Ваш заказ</h3>
+                                        <div className="header__bottom__btn__close" onClick={() => setOpenBasket(false)}>
+                                            <img className='header__bottom__btn__close__img' src={CrossPopup} alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="header__bottom__btn__products">
+                                        <div className="header__bottom__btn__product">
+                                            <img className='header__bottom__btn__product__img' src={PizzaBasket} alt="" />
+                                            <div className="header__bottom__btn__product__right">
+                                                <h5 className='h__b__btn__product__right__name'>Чикен Сладкий Чили</h5>
+                                                <p className='h__b__btn__product__right__text'>Традиционное тесто, 23 см</p>
+                                                <div className="h__b__btn__product__right__countPrice">
+                                                    <div className="h__b__btn__product__right__count">
+                                                        <img className='h__b__btn__p__right__count__minus' src={Minus} alt="" />
+                                                        <p className='h__b__btn__p__right__count__num'>1</p>
+                                                        <img className='h__b__btn__p__right__count__plus' src={Plus} alt="" />
+                                                    </div>
+                                                    <p className='h__b__btn__product__right__price'>499 ₽</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className="header__bottom__btn__content__bottom">
+                                    <div className="h__b__btn__content__bottom__line"></div>
+                                    <div className="h__b__btn__content__bottom__done">
+                                        <h5 className='h__b__btn__content__bottom__done__all'>Итого: 2 379 ₽</h5>
+                                        <button className='h__b__btn__content__bottom__done__btn'>Оформить заказ</button>
+                                    </div>
+                                </div>
+                                </motion.div>
+                            </>
+                        )}
+                        </AnimatePresence>
                         <label className='burger-3'>
                             <input type="checkbox"/>
                             <svg viewBox="0 0 32 32">
