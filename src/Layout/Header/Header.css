@@ -103,6 +103,7 @@
 
 .header__top__right__account__text {
     cursor: pointer;
+    position: relative;
 }
 
 .header__bottom__pizza {
@@ -483,6 +484,159 @@
 .city__list__li:hover {
     color: #FF7010;
 }
+
+.header__top__right__account__open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    background: rgba(25, 25, 25, 0.4);
+    z-index: 10;    
+}
+
+.header__top__right__account__popup {
+    border-radius: 24px;
+    width: 850px;
+    background-color: white;
+    padding: 0 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+}
+
+.h__t__right__account__popup__content {
+    width: 320px;
+    margin: 60px auto;
+}
+
+.h__t__right__account__popup__content__reg {
+    width: 430px;
+    margin: 60px auto;
+}
+
+.h__t__right__account__popup__content__name,
+.h__t__right__account__popup__content__reg__name {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 125%;
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.h__t__right__account__popup__content__reg__btext {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.h__t__right__account__popup__content__text,
+.h__t__right__account__popup__content__reg__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.h__t__right__account__popup__content__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.h__t__right__account__popup__content__reg__form {
+    width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.h__t__right__account__popup__content__login,
+.h__t__right__account__popup__content__password,
+.h__t__right__account__popup__content__reg__login,
+.h__t__right__account__popup__content__reg__email,
+.h__t__right__account__popup__content__reg__password,
+.h__t__right__account__popup__content__reg__address {
+    border: 1px solid #F0F0F0;
+    background-color: white;
+    outline: none;
+    border-radius: 6px;
+    width: 320px;
+    height: 48px;  
+    padding-left: 16px;  
+}
+
+.h__t__right__account__popup__content__login::placeholder,
+.h__t__right__account__popup__content__password::placeholder,
+.h__t__right__account__popup__content__reg__login::placeholder,
+.h__t__right__account__popup__content__reg__email::placeholder,
+.h__t__right__account__popup__content__reg__password::placeholder,
+.h__t__right__account__popup__content__reg__address::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    color: #A5A5A5;
+}
+
+.h__t__right__account__popup__content__btn,
+.h__t__right__account__popup__content__reg__btn {
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    height: 48px;    
+    background-color: #FF7010;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    transition: all .3s ease;
+}
+
+.h__t__right__account__popup__content__btn:hover,
+.h__t__right__account__popup__content__reg__btn:hover {
+    background-color: #fe8e43;
+}
+
+.h__t__right__account__popup__content__text2,
+.h__t__right__account__popup__content__reg__text2 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    text-align: center;
+    opacity: 0.4;
+    padding-top: 12px;
+}
+
+.h__t__right__account__popup__content__reg__text2b {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.h__t__right__account__popup__content__text__reg,
+.h__t__right__account__popup__content__reg__text__reg {
+    padding-top: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    text-align: center ;
+}
+
+.h__t__right__account__popup__content__text__reg span,
+.h__t__right__account__popup__content__reg__text__reg span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 129%;
+    color: #FF7010;
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 1330px) {

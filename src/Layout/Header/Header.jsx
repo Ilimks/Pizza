@@ -18,14 +18,17 @@ const Header = () => {
     const [city, setCity] = useState(false)
     const [cityName, setCityName] = useState("Москва");
     const [OpenBasket, setOpenBasket] = useState(false);
+    const [OpenAccount, setOpenAccount] = useState(false);
+    const [changeLog, setChangeLog] = useState(true);
+
 
     useEffect(() => {
-        if (OpenBasket) {
+        if (OpenBasket || OpenAccount) {
           document.body.style.overflow = "hidden";
         } else {
           document.body.style.overflow = "auto";
         }
-    }, [OpenBasket]);
+    }, [OpenBasket,OpenAccount]);
 
     const handleCitySelect = (selectedCity) => {
         setCityName(selectedCity);
@@ -77,8 +80,73 @@ const Header = () => {
                         <div className="header__top__right">
                             <p className='header__top__right__timeWork'>Время работы: с 11:00 до 23:00</p>
                             <div className="header__top__right__account">
-                                <img className='header__top__right__account__img' src={headerIconAccount} alt="account" />
-                                <p className='header__top__right__account__text'>Войти в аккаунт</p>
+                                <img onClick={() => setOpenAccount(true)} className='header__top__right__account__img' src={headerIconAccount} alt="account" />
+                                <p onClick={() => setOpenAccount(true)} className='header__top__right__account__text'>Войти в аккаунт</p>
+                                <AnimatePresence>
+                                {OpenAccount && (
+                                    <>
+                                        <motion.div
+                                        className="header__top__right__account__open"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        onClick={() => setOpenAccount(false)}
+                                        />
+
+                                        <motion.div
+                                        className="header__top__right__account__popup"
+                                        initial={{ scale: 0, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        exit={{ scale: 0, opacity: 0 }}
+                                        transition={{ type: "spring", stiffness: 120, damping: 20 }}
+                                        >  
+                                        {changeLog ? (
+                                            <div className="h__t__right__account__popup__content">
+                                                <h3 className='h__t__right__account__popup__content__name'>Вход в аккаунт</h3>
+                                                <p className='h__t__right__account__popup__content__text'>Сможете быстро оформлять заказы, использовать бонусы</p>
+                                                <form className='h__t__right__account__popup__content__form' action="">
+                                                    <label htmlFor="">
+                                                        <input className='h__t__right__account__popup__content__login' type="text" name="" id="" placeholder='Login'/>
+                                                    </label>
+                                                    <label htmlFor="">
+                                                        <input className='h__t__right__account__popup__content__password' type="password" name="" id="" placeholder='Password'/>
+                                                    </label>
+                                                    <button className='h__t__right__account__popup__content__btn'>Войти</button>
+                                                </form>
+                                                <p className='h__t__right__account__popup__content__text2'>Продолжая, вы соглашаетесь со сбором и обработкой персональных данных и пользовательским соглашением</p>
+                                                <p className='h__t__right__account__popup__content__text__reg'>Нужен аккаунт? <span onClick={() => setChangeLog(!changeLog)}>Зарегистрироваться</span></p>
+                                            </div>
+                                        ) : (
+                                            <div className="h__t__right__account__popup__content__reg">
+                                                <h3 className='h__t__right__account__popup__content__reg__name'>Зарегистрировать аккаунт</h3>
+                                                <div className="h__t__right__account__popup__content__reg__btext">
+                                                    <p className='h__t__right__account__popup__content__reg__text'>Сможете быстро оформлять заказы, использовать бонусы</p>
+                                                </div>
+                                                <form className='h__t__right__account__popup__content__reg__form' action="">
+                                                    <label htmlFor="">
+                                                        <input className='h__t__right__account__popup__content__reg__login' type="text" name="" id="" placeholder='Login'/>
+                                                    </label>
+                                                    <label htmlFor="">
+                                                        <input className='h__t__right__account__popup__content__reg__email' type="email" name="" id="" placeholder='Email'/>
+                                                    </label>
+                                                    <label htmlFor="">
+                                                        <input className='h__t__right__account__popup__content__reg__password' type="password" name="" id="" placeholder='Password'/>
+                                                    </label>
+                                                    <label htmlFor="">
+                                                        <input className='h__t__right__account__popup__content__reg__address' type="text" name="" id="" placeholder='Address'/>
+                                                    </label>
+                                                    <button className='h__t__right__account__popup__content__reg__btn'>Регистрация</button>
+                                                </form>
+                                                <div className="h__t__right__account__popup__content__reg__text2b">
+                                                    <p className='h__t__right__account__popup__content__reg__text2'>Продолжая, вы соглашаетесь со сбором и обработкой персональных данных и пользовательским соглашением</p>
+                                                </div>
+                                                <p className='h__t__right__account__popup__content__reg__text__reg'>У вас уже есть аккаунт? <span onClick={() => setChangeLog(!changeLog)}>Авторизоваться</span></p>
+                                            </div>
+                                        )}
+                                        </motion.div>
+                                    </>
+                                )}
+                                </AnimatePresence>
                             </div>
                         </div>
                     </div>
