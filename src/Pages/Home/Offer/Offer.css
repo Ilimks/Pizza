@@ -1,0 +1,121 @@
+.offer {
+    margin-top: 30px;
+}
+
+.offer__box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.offer__box__in1,
+.offer__box__in3 {
+    width: 300px;
+    height: 343px;
+    border-radius: 12px;
+    background-image: url(./OfferIMG/Offer1.svg);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer__box__in2,
+.offer__box__in4 {
+    width: 300px;
+    height: 343px;
+    border-radius: 12px;
+    background-image: url(./OfferIMG/Offer2.svg);
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.offer__box__in1:hover,
+.offer__box__in2:hover,
+.offer__box__in3:hover,
+.offer__box__in4:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.offer__box__title2,
+.offer__box__title4 {
+    width: 240px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    margin-top: 267px;      
+    margin-left: 20px; 
+   
+}
+
+.offer__box__title1,
+.offer__box__title3 {
+    width: 190px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%; 
+    margin-top: 267px;   
+    margin-left: 20px;
+       
+}
+
+.offer__box__mobile {
+    display: none;
+}
+
+@media (max-width: 710px) {
+
+    .offer__box {
+        display: none;
+    }
+
+    .offer__box__mobile {
+        display: flex;
+    }
+
+    .offer__box__mobile__in1,
+    .offer__box__mobile__in3 {
+        width: 280px;
+        height: 320px;
+        border-radius: 12px;
+        background-image: url(./OfferIMG/Offer1.svg);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .offer__box__mobile__in2,
+    .offer__box__mobile__in4 {
+        width: 280px;
+        height: 320px;
+        border-radius: 12px;
+        background-image: url(./OfferIMG/Offer2.svg);
+        cursor: pointer;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .offer__box__mobile__title2,
+    .offer__box__mobile__title4 {
+        width: 240px;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        padding-top: 244px;      
+        margin-left: 20px; 
+   
+}
+
+    .offer__box__mobile__title1,
+    .offer__box__mobile__title3 {
+        width: 190px;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%; 
+        padding-top: 244px;   
+        margin-left: 20px;
+       
+}
+}

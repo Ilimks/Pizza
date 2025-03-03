@@ -1,0 +1,81 @@
+.homeSnacks {
+    margin-top: 48px;
+}
+
+.homeSnacks__name {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    padding-bottom: 32px;    
+}
+
+.homeSnacks__box__carts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.homeSnacks__cart {
+    border: 1px solid #F0F0F0;
+    border-radius: 12px;
+    max-width: 300px;    
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homeSnacks__content {
+    padding: 16px 20px 20px ;
+}
+
+.homeSnacks__cart:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.homeSnacks__cart__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;   
+    padding-bottom: 12px; 
+}
+
+.homeSnacks__cart__des {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;  
+    padding-bottom: 16px;  
+}
+
+.homeSnacks__cart__btnPrise {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeSnacks__btn {
+    border-radius: 6px;
+    border: none;
+    width: 131px;
+    height: 48px;
+    background-color: #FF7010;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    transition: all .3s ease;
+}
+
+.homeSnacks__btn:hover {
+    background-color: #fe8e43;
+}
+.homeSnacks__price {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+    color: #FF7010;
+}
