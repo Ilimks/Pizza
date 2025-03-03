@@ -21,6 +21,12 @@
  align-items: center;
  flex-direction: column;
  justify-content: center;
+cursor: pointer;
+}
+.pizza__card:hover{
+  border: 1px solid #ff7010;
+  cursor: pointer;
+  transition: transform 0.5;
 }
 .pizza__title {
   padding: 16px 0 12px 20px;

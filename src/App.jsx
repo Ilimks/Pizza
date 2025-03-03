@@ -6,13 +6,12 @@ import Layout from './Layout/Layout';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Contact from './Pages/Contact/Contact';
 import Basket from './Pages/Basket/Basket';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import Action from './Pages/Action/Action';
 import Pizza from './Pages/Pizza/Pizza';
-
-=======
+// ========
 import Loader from './Loader/Loader';
->>>>>>> 9a455c376b4d0578be0e398a7a45295e0f5f4f63
+// >>>>>>> 9a455c376b4d0578be0e398a7a45295e0f5f4f63
 
 const App = () => {
 
