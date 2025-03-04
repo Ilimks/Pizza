@@ -5,10 +5,6 @@ import './Header.css'
 import headerLocation from './HeaderIMG/HeaderLocation.svg'
 import headerIconAccount from './HeaderIMG/HeaderIconAccount.svg'
 import headerPizza from './HeaderIMG/HeaderPizza.svg'
-import CrossPopup from './HeaderIMG/CrossPopup.svg'
-import PizzaBasket from './HeaderIMG/PizzaBasket.svg'
-import Minus from './HeaderIMG/minus.svg'
-import Plus from './HeaderIMG/Plus.svg'
 
 
 const Header = () => {
@@ -182,20 +178,16 @@ const Header = () => {
                                     <div className="header__bottom__btn__up">
                                         <h3 className='header__bottom__btn__name'>Ваш заказ</h3>
                                         <div className="header__bottom__btn__close" onClick={() => setOpenBasket(false)}>
-                                            <img className='header__bottom__btn__close__img' src={CrossPopup} alt="" />
                                         </div>
                                     </div>
                                     <div className="header__bottom__btn__products">
                                         <div className="header__bottom__btn__product">
-                                            <img className='header__bottom__btn__product__img' src={PizzaBasket} alt="" />
                                             <div className="header__bottom__btn__product__right">
                                                 <h5 className='h__b__btn__product__right__name'>Чикен Сладкий Чили</h5>
                                                 <p className='h__b__btn__product__right__text'>Традиционное тесто, 23 см</p>
                                                 <div className="h__b__btn__product__right__countPrice">
                                                     <div className="h__b__btn__product__right__count">
-                                                        <img className='h__b__btn__p__right__count__minus' src={Minus} alt="" />
                                                         <p className='h__b__btn__p__right__count__num'>1</p>
-                                                        <img className='h__b__btn__p__right__count__plus' src={Plus} alt="" />
                                                     </div>
                                                     <p className='h__b__btn__product__right__price'>499 ₽</p>
                                                 </div>
