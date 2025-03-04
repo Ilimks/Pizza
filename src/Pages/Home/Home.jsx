@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
-<<<<<<< HEAD
 import Category from './Category/Category';
 import Offer from './Offer/Offer';
 import Adress from './Adress/Adress';
@@ -9,11 +8,7 @@ import HomeSushi from './HomeSushi/HomeSushi';
 import HomeSnacks from './HomeSnacks/HomeSnacks';
 import HomeDesserts from './HomeDesserts/HomeDesserts';
 import HomeText from './HomeText/HomeText';
-import Up from '../../Layout/Header/HeaderIMG/CrossPopup.svg'
-=======
-import Sushi from './Sushi/Sushi';
 import Drink from './Drink/Drink';
->>>>>>> 229bf3a (sushi commit)
 
 const Home = () => {
 
@@ -42,7 +37,6 @@ const Home = () => {
 
     return (
         <main>
-<<<<<<< HEAD
             <Category/>
             <Offer/>
             <Adress/>
@@ -50,12 +44,9 @@ const Home = () => {
             <HomeSushi/>
             <HomeSnacks/>
             <HomeDesserts/>
+            <Drink/>
             <HomeText/>
             <button className={`scroll-to-top ${isScrollUp ? "show" : ""}`} onClick={scrollToTop}>↑</button>
-=======
-            <Sushi/>
-            <Drink/>
->>>>>>> 229bf3a (sushi commit)
         </main>
     );
 };

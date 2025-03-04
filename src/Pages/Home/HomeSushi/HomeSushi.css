@@ -9,6 +9,7 @@
     padding-bottom: 32px;    
 }
 
+
 .homeSushi__box__carts {
     display: flex;
     flex-wrap: wrap;
@@ -80,3 +81,6 @@
     line-height: 133%;
     color: #FF7010;
 }
+
+
+

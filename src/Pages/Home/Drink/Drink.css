@@ -18,8 +18,11 @@
 
 .drink-card {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #F0F0F0;
 }
 
 .drink-box {
@@ -70,6 +73,10 @@
     gap: 30px;
 }
 
+.drink-card:hover{
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 .drinks__filter-button {
     font-size: 16px;
     cursor: pointer;
@@ -182,8 +189,11 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    transition: all .3s ease;
 }
-
+.drink-fox button:hover{
+    background-color: #fe8e43;
+}
 .drink-fox p {
     color: #FF7010;
     font-size: 18px;
